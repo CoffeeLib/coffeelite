@@ -202,3 +202,5 @@ document.addEventListener('keydown', function (event) {
 document.addEventListener('keyup', function (event) {
     Keys[event.key] = false;
 });
+
+//Devpz :)
