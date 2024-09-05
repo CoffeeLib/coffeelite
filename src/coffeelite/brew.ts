@@ -3,12 +3,16 @@ class CoffeeBrew {
     public ctx: CanvasRenderingContext2D;
     public resolutionScale: number;
 
+    public font: string;
+
     /**
      *
      * @param {number} width
      * @param {number} height
      */
     constructor(width: number, height: number) {
+        // Window properties
+
         this.resolutionScale = 1;
 
         this.window = document.createElement('canvas') as HTMLCanvasElement;
@@ -38,6 +42,9 @@ class CoffeeBrew {
         this.window.style.imageRendering = 'auto';
         this.window.style.imageRendering = 'crisp-edges';
         this.window.style.imageRendering = 'pixelated';
+
+        // Text Properties
+        this.font = "32px Arial";
     }
 
     /**
@@ -185,5 +192,11 @@ class CoffeeBrew {
         this.ctx.lineTo(x3, y3);
         this.ctx.closePath();
         this.ctx.fill();
+    }
+
+    text(color: string, x: number, y: number, text: string) {
+        this.ctx.fillStyle = color;
+        this.ctx.font = this.font;
+        this.ctx.fillText(text, x, y);
     }
 }

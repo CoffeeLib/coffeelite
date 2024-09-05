@@ -5,6 +5,7 @@ var CoffeeBrew = /** @class */ (function () {
      * @param {number} height
      */
     function CoffeeBrew(width, height) {
+        // Window properties
         this.resolutionScale = 1;
         this.window = document.createElement('canvas');
         this.ctx = this.window.getContext('2d');
@@ -26,6 +27,8 @@ var CoffeeBrew = /** @class */ (function () {
         this.window.style.imageRendering = 'auto';
         this.window.style.imageRendering = 'crisp-edges';
         this.window.style.imageRendering = 'pixelated';
+        // Text Properties
+        this.font = "32px Arial";
     }
     /**
      *
@@ -121,6 +124,11 @@ var CoffeeBrew = /** @class */ (function () {
         this.ctx.lineTo(x3, y3);
         this.ctx.closePath();
         this.ctx.fill();
+    };
+    CoffeeBrew.prototype.text = function (color, x, y, text) {
+        this.ctx.fillStyle = color;
+        this.ctx.font = this.font;
+        this.ctx.fillText(text, x, y);
     };
     return CoffeeBrew;
 }());
