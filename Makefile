@@ -15,3 +15,6 @@ clean:
 
 erase:
 	@sh utils/erasebuild.sh
+
+new-project:
+	@sh utils/makeproject.sh

@@ -31,7 +31,7 @@ sign_func() {
 }
 
 compile_func() {
-    if ! tsc ./src/coffeelite/index.ts -outDir ./build/coffeelite; then
+    if ! tsc ./src/coffeelite/*.ts -outFile ./build/coffeelite/index.js; then
         echo "Build Failed!${NORMAL}"
         fail_func
     else
