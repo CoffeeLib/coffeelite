@@ -103,6 +103,25 @@ var CoffeeBrew = /** @class */ (function () {
         this.ctx.arc(x * this.resolutionScale, y * this.resolutionScale, r * this.resolutionScale, start_a, end_a);
         this.ctx.stroke();
     };
+    /**
+     *
+     * @param {string} color
+     * @param {number} x1
+     * @param {number} y1
+     * @param {number} x2
+     * @param {number} y2
+     * @param {number} x3
+     * @param {number} y3
+     */
+    CoffeeBrew.prototype.triangle = function (color, x1, y1, x2, y2, x3, y3) {
+        this.ctx.fillStyle = color;
+        this.ctx.beginPath();
+        this.ctx.moveTo(x1, y1);
+        this.ctx.lineTo(x2, y2);
+        this.ctx.lineTo(x3, y3);
+        this.ctx.closePath();
+        this.ctx.fill();
+    };
     return CoffeeBrew;
 }());
 var CoffeeInput = /** @class */ (function () {
@@ -148,30 +167,13 @@ var CoffeeInput = /** @class */ (function () {
     };
     return CoffeeInput;
 }());
-var CoffeeSprite = /** @class */ (function () {
-    /**
-     *
-     * @param {string} path
-     * @param {number} width
-     * @param {number} height
-     */
-    function CoffeeSprite(path, width, height) {
-        this.width = width;
-        this.height = height;
-        this.image = new Image(this.width, this.height);
-        this.image.src = path;
-    }
-    /**
-     *
-     * @param {CanvasRenderingContext2D} ctx
-     * @param {number} x
-     * @param {number} y
-     */
-    CoffeeSprite.prototype.draw = function (ctx, x, y) {
-        ctx.drawImage(this.image, x, y);
-    };
-    return CoffeeSprite;
-}());
+var CoffeeKeys = {};
+document.addEventListener('keydown', function (event) {
+    CoffeeKeys[event.key] = true;
+});
+document.addEventListener('keyup', function (event) {
+    CoffeeKeys[event.key] = false;
+});
 var CoffeeMath = /** @class */ (function () {
     function CoffeeMath() {
     }
@@ -198,14 +200,43 @@ var CoffeeMath = /** @class */ (function () {
         };
         return new_vector;
     };
+    /**
+     *
+     * @param {number} x1
+     * @param {number} y1
+     * @param {number} x2
+     * @param {number} y2
+     * @returns
+     */
+    CoffeeMath.prototype.getDistance = function (x1, y1, x2, y2) {
+        var distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        return distance;
+    };
     return CoffeeMath;
 }());
-var CoffeeKeys = {};
-document.addEventListener('keydown', function (event) {
-    CoffeeKeys[event.key] = true;
-});
-document.addEventListener('keyup', function (event) {
-    CoffeeKeys[event.key] = false;
-});
+var CoffeeSprite = /** @class */ (function () {
+    /**
+     *
+     * @param {string} path
+     * @param {number} width
+     * @param {number} height
+     */
+    function CoffeeSprite(path, width, height) {
+        this.width = width;
+        this.height = height;
+        this.image = new Image(this.width, this.height);
+        this.image.src = path;
+    }
+    /**
+     *
+     * @param {CanvasRenderingContext2D} ctx
+     * @param {number} x
+     * @param {number} y
+     */
+    CoffeeSprite.prototype.draw = function (ctx, x, y) {
+        ctx.drawImage(this.image, x, y);
+    };
+    return CoffeeSprite;
+}());
 
 //Devpz :)
