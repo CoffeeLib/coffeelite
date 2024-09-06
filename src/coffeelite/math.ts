@@ -57,6 +57,5 @@ class CoffeeMath {
                 decimal += Math.pow(2,((x.toString().length-1)-bit_idx));
             }
         }
-        console.log(decimal);
     }
 }
