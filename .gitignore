@@ -1,7 +1,11 @@
+# Template files
 index.html
 main.js
 style.css
 
+coffee.png
+
+# Packages and settings
 node_modules/
 .vscode/
 package.json
