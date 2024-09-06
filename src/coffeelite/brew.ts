@@ -194,9 +194,18 @@ class CoffeeBrew {
         this.ctx.fill();
     }
 
+    /**
+     * 
+     * @param {string} color 
+     * @param {number} x 
+     * @param {number} y 
+     * @param {string} text 
+     */
     text(color: string, x: number, y: number, text: string) {
         this.ctx.fillStyle = color;
         this.ctx.font = this.font;
         this.ctx.fillText(text, x, y);
     }
+
+    
 }
