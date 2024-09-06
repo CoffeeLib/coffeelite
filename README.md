@@ -1,5 +1,5 @@
 # coffeelite
-The smaller, simpler, _definitive_ version of the coffee JavaScript library.
+The smaller, simpler, **_definitive_** version of the coffee JavaScript library.
 
 ## What is Coffee?
 No, not the drink.

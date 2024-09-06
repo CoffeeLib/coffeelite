@@ -37,4 +37,26 @@ class CoffeeMath {
         let distance: number = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
         return distance;
     }
+
+    /**
+     * 
+     * @param {number} x 
+     * @param {number} i 
+     * @returns 
+     */
+    getCharacterInNumber(x: number, i: number) {
+        let char: number = Number(x.toString().at(i));
+        return char;
+    }
+
+    binaryToDecimal(x: number) {
+        let decimal: number = 0
+        for (let bit_idx = 0; bit_idx < x.toString().length; bit_idx++) {
+            let bit: number = this.getCharacterInNumber(x, bit_idx);
+            if (bit == 1) {
+                decimal += Math.pow(2,((x.toString().length-1)-bit_idx));
+            }
+        }
+        console.log(decimal);
+    }
 }
