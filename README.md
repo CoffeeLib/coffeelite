@@ -9,4 +9,4 @@ Coffee is a JavaScript library made by me, designed to make creating games with 
 While it is still a work in progress, it is a great library for those beginning to make games in JavaScript/HTML.
 
 ## Building
-See the [wiki](https://github.com/CoffeeLib/coffeelite/wiki/Setting-Up#building-the-library).
+See the [wiki](https://github.com/CoffeeLib/coffeelite/wiki/Creating-a-New-Project).
