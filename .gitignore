@@ -12,4 +12,4 @@ package.json
 package-lock.json
 
 # Library build
-build/
+build/index.js
